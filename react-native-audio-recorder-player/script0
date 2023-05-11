@@ -1,0 +1,5 @@
+type: script
+path:
+  - $rn
+data:
+  - yarn add react-native-audio-recorder-player

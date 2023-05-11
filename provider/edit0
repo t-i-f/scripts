@@ -1,0 +1,17 @@
+type: edit
+path:
+  - $rn_src
+  - {{args.[0]}}Provider.tsx
+data: |
+  import React, { ContextType } from 'react';
+  import type { ReactFC } from '@tisf/rn-providers';
+
+  export interface I{{args.[0]}}Ctx {}
+
+  export const {{args.[0]}}Ctx = React.createContext<I{{args.[0]}}Ctx>({});
+  export const use{{args.[0]}}Ctx = (): ContextType<typeof {{args.[0]}}Ctx> =>
+    React.useContext({{args.[0]}}Ctx);
+
+  export const {{args.[0]}}Provider: ReactFC = ({ children }) => {
+    return <{{args.[0]}}Ctx.Provider value=\{{}}>{children}</{{args.[0]}}Ctx.Provider>;
+  };

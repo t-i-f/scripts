@@ -1,0 +1,6 @@
+type: script
+path:
+  - $src
+data:
+  - npx react-native init {{args.[0]}}
+  - mv ./{{args.[0]}} ./mobile

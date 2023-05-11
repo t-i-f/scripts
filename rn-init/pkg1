@@ -1,0 +1,10 @@
+type: install
+path:
+  - $rn
+data:
+  - dep: react-native-svg react-native-onesignal react-native-video react-native-webview \
+         @shopify/flash-list react-native-vector-icons @tisf/rn-providers @tisf/rn-ui
+  - dep: react-native-audio-recorder-player
+    cmd: npx @tisf/scripts
+  - dep: @types/react-native-vector-icons
+    opt: ' -D '

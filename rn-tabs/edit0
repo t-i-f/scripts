@@ -1,0 +1,49 @@
+type: edit
+path:
+  - $rn_screens
+  - {{args.name}}Tabs.tsx
+data: |
+  import React from 'react';
+
+  import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+  import FontAwesome5ProIcon from 'react-native-vector-icons/FontAwesome5Pro';
+  import { CustomStatusBar, createTestScreen } from '@tisf/rn-ui';
+
+  const Tab = createBottomTabNavigator();
+
+  const header = false;
+
+  export const {{args.name}}Tabs = () => {
+    return (
+      <>
+        <Tab.Navigator
+          screenOptions=\{{ headerShown: header }}
+          backBehavior="none"
+        >
+          {{#each args.data}}
+          <Tab.Screen
+            name="{{name}}Tab"
+            key={ {{~@index~}} }
+            component={createTestScreen("{{name}}")}
+            options=\{{
+              tabBarLabel: '{{name}}',
+              title: '{{name}}',
+              tabBarIcon: ({ size, color }) => (
+                <FontAwesome5ProIcon
+                  light
+                  name="{{icon}}"
+                  color={color}
+                  size={size}
+                />
+              ),
+            }}
+          />
+          {{/each}}
+        </Tab.Navigator>
+        <CustomStatusBar
+          barStyle="dark-content"
+          backgroundColor={header ? 'white' : undefined}
+        />
+      </>
+    );
+  };

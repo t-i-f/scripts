@@ -1,0 +1,10 @@
+type: script
+path:
+  - $rn
+data:
+  - git init . && git add -A && git commit -am 'First Commit'
+  - yarn add react-native-svg react-native-onesignal react-native-video react-native-webview
+  - yarn add @shopify/flash-list react-native-vector-icons @tisf/rn-providers @tisf/rn-ui
+  - npx @tisf/scripts react-native-audio-recorder-player
+  - yarn add -D @types/react-native-vector-icons
+

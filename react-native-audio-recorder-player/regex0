@@ -1,0 +1,14 @@
+type: regex
+path:
+  - $rn_android_src
+  - AndroidManifest.xml
+data:
+  - find: |
+      /(\<application)/m
+    replace: |
+      <uses-permission android:name="android.permission.RECORD_AUDIO" />
+      <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+      <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+      $1
+    already: |
+      RECORD_AUDIO

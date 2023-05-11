@@ -1,0 +1,13 @@
+script: rn-tabs
+name: Test
+data:
+  - name: One
+    icon: tombstone-alt
+  - name: Two
+    icon: heartbeat
+  - name: Three
+    icon: laugh-beam
+  - name: Four
+    icon: pray
+  - name: More
+    icon: bars

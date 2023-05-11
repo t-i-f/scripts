@@ -1,0 +1,16 @@
+type: edit
+path: 
+  - $rn_src
+  - use{{args.[0]}}Store.ts
+data: |
+  import { create } from 'zustand';
+
+  interface {{args.[0]}}State {
+    bears: number;
+    increase: () => void;
+  }
+
+  export const use{{args.[0]}}Store = create<{{args.[0]}}State>((set) => ({
+    bears: 0,
+    increase: () => set((state) => ({ bears: state.bears + 1 })),
+  }));
